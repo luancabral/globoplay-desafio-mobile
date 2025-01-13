@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "baseline-arrow_back-24px.svg",
+      "filename" : "baseline_arrow_back_black_18.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "baseline_arrow_back_black_18 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "baseline_arrow_back_black_18 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

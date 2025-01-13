@@ -17,7 +17,6 @@ enum ServiceError: Error {
             return "Problema de conexão. Por favor verifique se está conectado a internet"
         case .other:
             return "Não foi possível completar a solicitação. Tente novamente"
-            //"Unable to complete. We are working to resolve it. Try again in a moment"
         }
     }
 }

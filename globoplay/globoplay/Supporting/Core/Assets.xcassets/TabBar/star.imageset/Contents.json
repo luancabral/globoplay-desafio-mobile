@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "baseline-star_rate-18px.svg",
-      "idiom" : "universal"
+      "filename" : "baseline_star_rate_black_18.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "baseline_star_rate_black_18 1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "baseline_star_rate_black_18 2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

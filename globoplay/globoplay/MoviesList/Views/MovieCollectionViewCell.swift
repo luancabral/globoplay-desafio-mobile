@@ -65,7 +65,6 @@ extension MovieCollectionViewCell: ViewCode {
             movieImageView.widthAnchor.constraint(equalToConstant: imageSize.width),
             movieImageView.heightAnchor.constraint(equalToConstant: imageSize.height),
             movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24)
-//            movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
         ])
     }
 }

@@ -19,6 +19,7 @@ struct MovieModel: Codable {
     let posterPath: String
     let originalLanguage: String
     let voteAverage: Double
+    let releaseDate: String
     
     var isFavorite: Bool {
         let defaults = UserDefaultManager(keyName: "favoriteMovies")
@@ -30,5 +31,6 @@ struct MovieModel: Codable {
         case posterPath = "poster_path"
         case originalLanguage = "original_language"
         case voteAverage = "vote_average"
+        case releaseDate = "release_date"
     }
 }

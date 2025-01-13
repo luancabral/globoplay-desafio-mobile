@@ -79,7 +79,6 @@ final class MovieDetailsView: UIView {
         button.backgroundColor = .white
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
-        //        button.addTarget(self, action: #selector(watchButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -105,13 +104,12 @@ final class MovieDetailsView: UIView {
         return label
     }()
     
-    private let genderLabel: UILabel = {
+    private let avgLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 27, weight: .bold)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Ação"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -165,6 +163,7 @@ final class MovieDetailsView: UIView {
         movieImageView.image = posterImage
         titleLabel.text = movie.title
         detailsLabel.text = movie.overview
+        avgLabel.text = String(format: "Nota: %.1f", movie.voteAverage)
         updateButtonImage()
         setupView()
         setupDetails(movie: movie)
@@ -174,7 +173,7 @@ final class MovieDetailsView: UIView {
         let finalText =
             """
             Título Original: \(movie.title)
-            Nota: \(movie.voteAverage)
+            Lançamento: \(movie.releaseDate)
             Idioma: \(movie.originalLanguage.uppercased())
             """
         
@@ -216,7 +215,7 @@ extension MovieDetailsView: ViewCode {
         containerView.addSubview(blurEffectView)
         containerView.addSubview(movieImageView)
         containerView.addSubview(titleLabel)
-        containerView.addSubview(genderLabel)
+        containerView.addSubview(avgLabel)
         containerView.addSubview(detailsLabel)
         containerView.addSubview(buttonStackView)
         
@@ -261,7 +260,7 @@ extension MovieDetailsView: ViewCode {
             blurEffectView.topAnchor.constraint(equalTo: topAnchor),
             blurEffectView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             blurEffectView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            blurEffectView.bottomAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 10),
+            blurEffectView.bottomAnchor.constraint(equalTo: avgLabel.bottomAnchor, constant: 10),
             
             movieImageView.widthAnchor.constraint(equalToConstant: 180),
             movieImageView.heightAnchor.constraint(equalToConstant: 300),
@@ -272,11 +271,11 @@ extension MovieDetailsView: ViewCode {
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
             titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             
-            genderLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
-            genderLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
-            genderLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
+            avgLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15),
+            avgLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
+            avgLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             
-            detailsLabel.topAnchor.constraint(equalTo: genderLabel.bottomAnchor, constant: 24),
+            detailsLabel.topAnchor.constraint(equalTo: avgLabel.bottomAnchor, constant: 24),
             detailsLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 24),
             detailsLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -24),
             

@@ -14,7 +14,7 @@ protocol FavoriteMoviesViewModelDelegate: ViewModelDelegate {
 final class FavoriteMoviesViewModel {
     private let service: MovieServiceProtocol
     private(set) var favoritesMovies = [MovieModel]()
-    weak var delegate: FavoriteMoviesViewModelDelegate?
+    weak var viewDelegate: FavoriteMoviesViewModelDelegate?
     
     init(service: MovieServiceProtocol, _ favoritesMovies: [MovieModel] = [MovieModel]()) {
         self.service = service
@@ -40,9 +40,9 @@ final class FavoriteMoviesViewModel {
             switch result {
             case .success(let favoriteMovie):
                 self.favoritesMovies.append(favoriteMovie)
-                delegate?.reloadData()
+                viewDelegate?.reloadData()
             case .failure(let error):
-                delegate?.set(error: error, tryAgainAction: { [weak self] in self?.fetchMovieById(movieId: movieId) })
+                viewDelegate?.set(error: error, tryAgainAction: { [weak self] in self?.fetchMovieById(movieId: movieId) })
             }
         }
     }

@@ -14,7 +14,7 @@ final class FavoriteMoviesViewController: BaseViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (view.frame.size.width/3)-3, height: 200)
+        layout.itemSize = CGSize(width: (view.frame.size.width/3)-3, height: 170)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
@@ -36,7 +36,7 @@ final class FavoriteMoviesViewController: BaseViewController {
     override func viewDidLoad() {
         setupView()
         setupNavigationControllerImage()
-        viewModel.delegate = self
+        viewModel.viewDelegate = self
         
     }
     

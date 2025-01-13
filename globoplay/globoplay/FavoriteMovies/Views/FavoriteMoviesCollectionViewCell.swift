@@ -62,11 +62,10 @@ extension  FavoriteMoviesCollectionViewCell: ViewCode {
     
     func buildConstratins() {
         NSLayoutConstraint.activate([
-            movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             movieImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             movieImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
             movieImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//            movieImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
         ])
     }
 }
